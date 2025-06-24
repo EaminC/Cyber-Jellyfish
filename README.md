@@ -12,12 +12,12 @@ A dynamic cyber jellyfish animation project based on Python and Pygame.
 
 ### Parameter Variations
 
-| Configuration                              | Preview                        | Description                            |
-| ------------------------------------------ | ------------------------------ | -------------------------------------- |
-| `limit_x=15, limit_y=15`                   | ![Small Range](demo_small.gif) | Compact, concentrated pattern          |
-| `limit_x=11111111195, limit_y=15`          | ![Wide Range](demo_wide.gif)   | Horizontally stretched, narrow pattern |
-| `limit_x=11111111195, limit_y=95`          | ![Current](demo_current.gif)   | Current default configuration          |
-| `limit_x=11111111195, limit_y=11111111195` | ![Large Range](demo_large.gif) | Maximum range, complex patterns        |
+| Configuration                     | Preview                        | Description                            |
+| --------------------------------- | ------------------------------ | -------------------------------------- |
+| `limit_x=15, limit_y=15`          | ![Small Range](demo_small.gif) | Compact, concentrated pattern          |
+| `limit_x=11111111195, limit_y=15` | ![Wide Range](demo_wide.gif)   | Horizontally stretched, narrow pattern |
+| `limit_x=11111111195, limit_y=95` | ![Current](demo_current.gif)   | Current default configuration          |
+| `limit_x=500, limit_y=500`        | ![Large Range](demo_large.gif) | Moderate range, balanced patterns      |
 
 ## Features
 

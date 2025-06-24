@@ -1,11 +1,10 @@
 import pygame
 import numpy as np
 from PIL import Image
-import os
 
-def generate_demo_gif(limit_x, limit_y, filename, description):
-    """生成指定参数的演示gif"""
-    print(f"开始生成 {description} - {filename}")
+def generate_moderate_demo():
+    """生成limit_x=500, limit_y=500的演示gif"""
+    print("开始生成中等范围参数演示 (limit_x=500, limit_y=500)")
     
     # 初始化
     pygame.init()
@@ -13,8 +12,10 @@ def generate_demo_gif(limit_x, limit_y, filename, description):
     screen_size_y = 750
     screen = pygame.display.set_mode((screen_size_x, screen_size_y))
     
-    # 网格参数
+    # 网格参数 - 设为500
     grid_size = 150
+    limit_x = 500
+    limit_y = 500
     x_vals = np.linspace(-limit_x, limit_x, grid_size)
     y_vals = np.linspace(-limit_y, limit_y, grid_size)
     X0, Y0 = np.meshgrid(x_vals, y_vals)
@@ -58,25 +59,16 @@ def generate_demo_gif(limit_x, limit_y, filename, description):
 
     # 保存gif
     frames[0].save(
-        filename,
+        'demo_moderate.gif',
         save_all=True,
         append_images=frames[1:],
-        duration=80,  # 每帧持续时间
+        duration=80,
         loop=0
     )
     
-    print(f"  ✅ {filename} 生成完成")
+    print("  ✅ demo_moderate.gif 生成完成")
     pygame.quit()
 
-# 生成三个不同参数的演示
-demos = [
-    (15, 15, "demo_small.gif", "小范围参数 (limit_x=15, limit_y=15)"),
-    (11111111195, 15, "demo_wide.gif", "宽范围参数 (limit_x=11111111195, limit_y=15)"),
-    (11111111195, 95, "demo_current.gif", "当前参数 (limit_x=11111111195, limit_y=95)")
-]
-
-for limit_x, limit_y, filename, description in demos:
-    generate_demo_gif(limit_x, limit_y, filename, description)
-    print()
-
-print("🎉 所有演示gif生成完成！") 
+if __name__ == "__main__":
+    generate_moderate_demo()
+    print("�� 中等范围参数演示gif生成完成！") 
