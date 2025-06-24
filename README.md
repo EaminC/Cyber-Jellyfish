@@ -4,7 +4,19 @@ English | [中文](./README_CN.md)
 
 A dynamic cyber jellyfish animation project based on Python and Pygame.
 
+## Demos
+
+### Default Configuration
+
 ![Demo](demo.gif)
+
+### Parameter Variations
+
+| Configuration                     | Preview                        | Description                            |
+| --------------------------------- | ------------------------------ | -------------------------------------- |
+| `limit_x=15, limit_y=15`          | ![Small Range](demo_small.gif) | Compact, concentrated pattern          |
+| `limit_x=11111111195, limit_y=15` | ![Wide Range](demo_wide.gif)   | Horizontally stretched, narrow pattern |
+| `limit_x=11111111195, limit_y=95` | ![Current](demo_current.gif)   | Current default configuration          |
 
 ## Features
 

@@ -11,7 +11,7 @@ clock = pygame.time.Clock()
 # 网格参数 - 增加密度让动画更细腻
 grid_size = 150
 limit_x = 11111111195
-limit_y = 95
+limit_y = 15
 x_vals = np.linspace(-limit_x, limit_x, grid_size)  # 调整范围
 y_vals = np.linspace(-limit_y, limit_y, grid_size)  # 调整范围
 X0, Y0 = np.meshgrid(x_vals, y_vals)
