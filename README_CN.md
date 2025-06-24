@@ -40,6 +40,29 @@ python draw.py
 - 使用网格点变换来生成流畅的动画效果
 - 实时计算每一帧的粒子位置
 
+### 核心数学公式
+
+水母动画通过以下数学变换生成：
+
+```
+k = 5 × cos(x/14) × cos(y/30)
+e = y/8 - 13
+d = (k² + e²)/59 + 4
+a = arctan2(e, k)
+q = 60 - sin(a × e) + k × (3 + (4/d) × sin(d² - 2t))
+c = d/2 + e/99 - t/18
+
+X = q × sin(c) × scale + center_x
+Y = (q + 9d) × cos(c) × scale + center_y
+```
+
+其中：
+
+- `(x, y)` 是初始网格坐标
+- `t` 是时间参数 (frame/30.0)
+- `scale` 控制大小 (默认: 1.8)
+- `center_x, center_y` 是屏幕中心坐标
+
 ## 参数说明
 
 - `grid_size`: 控制渲染精度，数值越大越细腻
