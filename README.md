@@ -1,6 +1,6 @@
 # 赛博水母 (Cyber Jellyfish)
 
-一个基于 Python 和 Pygame 的动态赛博水母动画项目。
+一个基于 Python 和 Pygame 的动态赛博电子水母动画项目。
 
 ![Demo](demo.gif)
 
