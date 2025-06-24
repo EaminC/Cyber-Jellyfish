@@ -44,17 +44,21 @@ python draw.py
 
 水母动画通过以下数学变换生成：
 
-```
-k = 5 × cos(x/14) × cos(y/30)
-e = y/8 - 13
-d = (k² + e²)/59 + 4
-a = arctan2(e, k)
-q = 60 - sin(a × e) + k × (3 + (4/d) × sin(d² - 2t))
-c = d/2 + e/99 - t/18
+$$k = 5 \cdot \cos\left(\frac{x}{14}\right) \cdot \cos\left(\frac{y}{30}\right)$$
 
-X = q × sin(c) × scale + center_x
-Y = (q + 9d) × cos(c) × scale + center_y
-```
+$$e = \frac{y}{8} - 13$$
+
+$$d = \frac{k^2 + e^2}{59} + 4$$
+
+$$a = \arctan2(e, k)$$
+
+$$q = 60 - \sin(a \cdot e) + k \cdot \left(3 + \frac{4}{d} \cdot \sin(d^2 - 2t)\right)$$
+
+$$c = \frac{d}{2} + \frac{e}{99} - \frac{t}{18}$$
+
+$$X = q \cdot \sin(c) \cdot \text{scale} + \text{center}_x$$
+
+$$Y = (q + 9d) \cdot \cos(c) \cdot \text{scale} + \text{center}_y$$
 
 其中：
 
