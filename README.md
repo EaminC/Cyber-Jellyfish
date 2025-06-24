@@ -12,17 +12,12 @@ A dynamic cyber jellyfish animation project based on Python and Pygame.
 
 ### Parameter Variations
 
-Our mathematical transformation supports asymmetric parameter ranges for more diverse patterns:
-
-| Configuration                              | Preview                                | Description                            |
-| ------------------------------------------ | -------------------------------------- | -------------------------------------- |
-| `x[-15, 15], y[-15, 15]`                   | ![small](demo_small.gif)               | Compact, concentrated pattern          |
-| `x[-11111111195, 11111111195], y[-15, 15]` | ![wide](demo_wide.gif)                 | Horizontally stretched, narrow pattern |
-| `x[-11111111195, 11111111195], y[-95, 95]` | ![current](demo_current.gif)           | Current default configuration          |
-| `x[-500, 500], y[-500, 500]`               | ![moderate](demo_large.gif)            | Moderate range, balanced patterns      |
-| `x[-500, 500], y[-500, 100]`               | ![asymmetric_y](demo_asymmetric_y.gif) | Y-axis asymmetric, negative extension  |
-| `x[0, 1000], y[-250, 250]`                 | ![asymmetric_x](demo_asymmetric_x.gif) | X-axis asymmetric, positive offset     |
-| `x[0, 500], y[0, 500]`                     | ![quarter](demo_quarter.gif)           | First quadrant pattern                 |
+| Configuration                     | Preview                              | Description                            |
+| --------------------------------- | ------------------------------------ | -------------------------------------- |
+| `limit_x=15, limit_y=15`          | ![Small Range](demos/demo_small.gif) | Compact, concentrated pattern          |
+| `limit_x=11111111195, limit_y=15` | ![Wide Range](demos/demo_wide.gif)   | Horizontally stretched, narrow pattern |
+| `limit_x=11111111195, limit_y=95` | ![Current](demos/demo_current.gif)   | Current default configuration          |
+| `limit_x=500, limit_y=500`        | ![Large Range](demos/demo_large.gif) | Moderate range, balanced patterns      |
 
 ## Features
 
