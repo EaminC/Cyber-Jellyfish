@@ -52,3 +52,6 @@ python draw.py
 ## 许可证
 
 MIT License
+
+
+idea来源互联网 实现由claude agent完成 
