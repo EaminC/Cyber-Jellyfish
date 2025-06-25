@@ -121,12 +121,18 @@ $$Y = (q + 2d) \cdot \cos(c) \cdot \text{scale} + \text{center}_y$$
 - `limit_y_min, limit_y_max`: Y 轴范围（支持不对称范围）
 - `generate_demo`: 布尔标志，启用演示 gif 生成
 
+### GIF 生成参数
+
+- `gif_fps`: GIF 帧率（每秒帧数，建议范围: 10-30）
+- `gif_duration_seconds`: GIF 总时长（秒，建议范围: 2-8 秒）
+- **注意**: 高帧率 + 长时长 = 大文件 + 慢生成
+
 ### 其他参数
 
 - `grid_size`: 控制渲染精度，数值越大越细腻
 - `scale`: 控制水母大小
 - `screen_size_x/y`: 窗口尺寸
-- `clock.tick()`: 控制帧率
+- `clock.tick()`: 控制实时显示帧率（交互模式）
 
 ### 使用示例
 
@@ -139,8 +145,19 @@ limit_x_max = 100
 limit_x_min = -50
 limit_x_max = 200
 
-# 启用演示生成
+# 启用演示生成并自定义帧率
 generate_demo = True
+gif_fps = 20  # 更高帧率，更流畅动画
+gif_duration_seconds = 3  # 较短时长，文件更小
+
+# 不同质量设置
+# 高质量（流畅但文件大）
+gif_fps = 30
+gif_duration_seconds = 5
+
+# 低质量（快速生成，文件小）
+gif_fps = 10
+gif_duration_seconds = 2
 ```
 
 ## 贡献

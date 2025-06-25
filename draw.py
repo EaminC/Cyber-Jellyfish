@@ -16,6 +16,11 @@ limit_y_min = -46
 limit_y_max = 200
 generate_demo = False  # 是否生成演示gif
 
+# GIF生成参数
+gif_fps = 15  # GIF帧率 (frames per second) - 建议范围: 10-30
+gif_duration_seconds = 4  # GIF总时长 (秒) - 建议范围: 2-8秒
+# 注意: 高帧率 + 长时长 = 大文件 + 慢生成
+
 x_vals = np.linspace(limit_x_min, limit_x_max, grid_size)  # 不对称X范围
 y_vals = np.linspace(limit_y_min, limit_y_max, grid_size)  # 不对称Y范围
 X0, Y0 = np.meshgrid(x_vals, y_vals)
@@ -39,11 +44,18 @@ def compute_transformed(x, y, t):
 if generate_demo:
     from PIL import Image
     print("🎬 开始生成演示gif...")
+    
+    # 计算帧数和时间参数
+    max_frames = int(gif_fps * gif_duration_seconds)
+    frame_duration_ms = int(1000 / gif_fps)  # 每帧持续时间(毫秒)
+    time_step = gif_duration_seconds / max_frames  # 时间步长
+    
+    print(f"📊 GIF参数: {gif_fps} FPS, {gif_duration_seconds}秒, 总帧数: {max_frames}")
+    
     frames = []
-    max_frames = 150
     
     for frame in range(max_frames):
-        t = frame / 30.0
+        t = frame * time_step
         X, Y = compute_transformed(X0_flat, Y0_flat, t)
         
         screen.fill((0, 0, 0))
@@ -58,12 +70,12 @@ if generate_demo:
         frames.append(pil_image)
         
         pygame.display.flip()
-        if frame % 25 == 0:
+        if frame % max(1, max_frames // 5) == 0:  # 显示5次进度
             print(f"  进度: {frame+1}/{max_frames}")
     
     # 保存gif
-    frames[0].save('demo.gif', save_all=True, append_images=frames[1:], duration=67, loop=0)
-    print("✅ demo.gif 生成完成")
+    frames[0].save('demo.gif', save_all=True, append_images=frames[1:], duration=frame_duration_ms, loop=0)
+    print(f"✅ demo.gif 生成完成 ({gif_fps} FPS, {gif_duration_seconds}秒)")
     pygame.quit()
     exit()
 

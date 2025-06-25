@@ -121,12 +121,18 @@ Where:
 - `limit_y_min, limit_y_max`: Y-axis range (supports asymmetric ranges)
 - `generate_demo`: Boolean flag to enable demo GIF generation
 
+### GIF Generation Parameters
+
+- `gif_fps`: GIF frame rate (frames per second, recommended: 10-30)
+- `gif_duration_seconds`: GIF total duration in seconds (recommended: 2-8)
+- **Note**: Higher frame rate + longer duration = larger file size + slower generation
+
 ### Other Parameters
 
 - `grid_size`: Controls rendering precision, higher values for more detail
 - `scale`: Controls jellyfish size
 - `screen_size_x/y`: Window dimensions
-- `clock.tick()`: Controls frame rate
+- `clock.tick()`: Controls real-time frame rate (for interactive display)
 
 ### Usage Examples
 
@@ -139,8 +145,19 @@ limit_x_max = 100
 limit_x_min = -50
 limit_x_max = 200
 
-# Enable demo generation
+# Enable demo generation with custom frame rate
 generate_demo = True
+gif_fps = 20  # Higher frame rate for smoother animation
+gif_duration_seconds = 3  # Shorter duration for smaller file
+
+# Different quality settings
+# High quality (smooth but large file)
+gif_fps = 30
+gif_duration_seconds = 5
+
+# Low quality (fast generation, small file)
+gif_fps = 10
+gif_duration_seconds = 2
 ```
 
 ## Contributing
