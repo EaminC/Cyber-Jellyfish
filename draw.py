@@ -8,12 +8,16 @@ screen_size_y = 400
 screen = pygame.display.set_mode((screen_size_x, screen_size_y))
 clock = pygame.time.Clock()
 
-# 网格参数 - 增加密度让动画更细腻
+# 网格参数 - 支持不对称范围
 grid_size = 150
-limit_x = 11111111195
-limit_y = 100
-x_vals = np.linspace(-limit_x, limit_x, grid_size)  # 调整范围
-y_vals = np.linspace(-limit_y, limit_y, grid_size)  # 调整范围
+limit_x_min = -11111111195
+limit_x_max = 11111111195
+limit_y_min = -100
+limit_y_max = 100
+generate_demo = False  # 是否生成演示gif
+
+x_vals = np.linspace(limit_x_min, limit_x_max, grid_size)  # 不对称X范围
+y_vals = np.linspace(limit_y_min, limit_y_max, grid_size)  # 不对称Y范围
 X0, Y0 = np.meshgrid(x_vals, y_vals)
 X0_flat = X0.flatten()
 Y0_flat = Y0.flatten()
@@ -27,9 +31,41 @@ def compute_transformed(x, y, t):
     c = d / 2 + e / 99 - t / 18
     # 调整缩放和偏移，让水母居中并放大
     scale = 1.8  # 放大倍数
-    X = (q + 2 * d ) * np.sin(c) * scale + screen_size_x // 2  # 居中
-    Y = (q + 2 * d) * np.cos(c) * scale + screen_size_y // 2  # 居中
+    X = q * np.sin(c) * scale + screen_size_x // 2  # 居中
+    Y = (q + 9 * d) * np.cos(c) * scale + screen_size_y // 2  # 居中
     return X, Y
+
+# Demo生成功能
+if generate_demo:
+    from PIL import Image
+    print("🎬 开始生成演示gif...")
+    frames = []
+    max_frames = 150
+    
+    for frame in range(max_frames):
+        t = frame / 30.0
+        X, Y = compute_transformed(X0_flat, Y0_flat, t)
+        
+        screen.fill((0, 0, 0))
+        for x, y in zip(X, Y):
+            if 0 <= x < screen_size_x and 0 <= y < screen_size_y:
+                screen.set_at((int(x), int(y)), (255, 255, 255))
+        
+        # 保存帧
+        pygame_image = pygame.surfarray.array3d(screen)
+        pygame_image = pygame_image.swapaxes(0, 1)
+        pil_image = Image.fromarray(pygame_image)
+        frames.append(pil_image)
+        
+        pygame.display.flip()
+        if frame % 25 == 0:
+            print(f"  进度: {frame+1}/{max_frames}")
+    
+    # 保存gif
+    frames[0].save('demo.gif', save_all=True, append_images=frames[1:], duration=67, loop=0)
+    print("✅ demo.gif 生成完成")
+    pygame.quit()
+    exit()
 
 # 主循环
 running = True
@@ -48,7 +84,7 @@ while running:
             screen.set_at((int(x), int(y)), (255, 255, 255))  # 白点
     
     pygame.display.flip()
-    clock.tick(120)  # 60 FPS
+    clock.tick(120)  # 120 FPS
     frame += 1
 
 pygame.quit()

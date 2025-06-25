@@ -12,12 +12,23 @@ A dynamic cyber jellyfish animation project based on Python and Pygame.
 
 ### Parameter Variations
 
-| Configuration                     | Preview                              | Description                            |
-| --------------------------------- | ------------------------------------ | -------------------------------------- |
-| `limit_x=15, limit_y=15`          | ![Small Range](demos/demo_small.gif) | Compact, concentrated pattern          |
-| `limit_x=11111111195, limit_y=15` | ![Wide Range](demos/demo_wide.gif)   | Horizontally stretched, narrow pattern |
-| `limit_x=11111111195, limit_y=95` | ![Current](demos/demo_current.gif)   | Current default configuration          |
-| `limit_x=500, limit_y=500`        | ![Large Range](demos/demo_large.gif) | Moderate range, balanced patterns      |
+#### Symmetric Configurations
+
+| Configuration              | Preview                              | Description                            |
+| -------------------------- | ------------------------------------ | -------------------------------------- |
+| `x: -15~15, y: -15~15`     | ![Small Range](demos/demo_small.gif) | Compact, concentrated pattern          |
+| `x: extreme, y: -15~15`    | ![Wide Range](demos/demo_wide.gif)   | Horizontally stretched, narrow pattern |
+| `x: extreme, y: -100~100`  | ![Current](demos/demo_current.gif)   | Current default configuration          |
+| `x: -500~500, y: -500~500` | ![Large Range](demos/demo_large.gif) | Moderate range, balanced patterns      |
+
+#### Asymmetric Configurations
+
+| Configuration                | Preview                                     | Description               |
+| ---------------------------- | ------------------------------------------- | ------------------------- |
+| `x: -200~800, y: -50~150`    | ![Asymmetric](demos/demo_asymmetric_xy.gif) | Asymmetric X and Y ranges |
+| `x: 0~1000, y: -100~100`     | ![Positive X](demos/demo_positive_x.gif)    | X-axis positive offset    |
+| `x: extreme, y: 0~200`       | ![Positive Y](demos/demo_positive_y.gif)    | Y-axis positive offset    |
+| `x: -100~100, y: -1000~1000` | ![Tall Shape](demos/demo_tall.gif)          | Tall, narrow shape        |
 
 ## Features
 
@@ -82,10 +93,33 @@ Where:
 
 ## Parameter Description
 
+### New Asymmetric Range Parameters
+
+- `limit_x_min, limit_x_max`: X-axis range (supports asymmetric ranges)
+- `limit_y_min, limit_y_max`: Y-axis range (supports asymmetric ranges)
+- `generate_demo`: Boolean flag to enable demo GIF generation
+
+### Other Parameters
+
 - `grid_size`: Controls rendering precision, higher values for more detail
 - `scale`: Controls jellyfish size
 - `screen_size_x/y`: Window dimensions
 - `clock.tick()`: Controls frame rate
+
+### Usage Examples
+
+```python
+# Symmetric range (traditional)
+limit_x_min = -100
+limit_x_max = 100
+
+# Asymmetric range (new feature)
+limit_x_min = -50
+limit_x_max = 200
+
+# Enable demo generation
+generate_demo = True
+```
 
 ## Contributing
 
