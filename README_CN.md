@@ -32,6 +32,16 @@
 | `x: -100~100, y: 5~10`         | ![小正Y](demos/demo_small_positive_y.gif)        | 小的正 Y 范围              |
 | `x: -10~0, y: -46~200`         | ![负X范围](demos/demo_negative_x_asymmetric.gif) | 负 X 范围，正 Y 偏移       |
 
+#### 几何形状变化
+
+| 形状类型            | 预览效果                                     | 描述             |
+| ------------------- | -------------------------------------------- | ---------------- |
+| 三角形网格          | ![三角形](demos/demo_triangle_jellyfish.gif) | 三角形水母图案   |
+| 圆形网格            | ![圆形](demos/demo_circle_jellyfish.gif)     | 圆形水母图案     |
+| 五角星              | ![五角星](demos/demo_star_jellyfish.gif)     | 五角星形状的水母 |
+| 菱形 (45° 旋转)     | ![菱形](demos/demo_diamond_jellyfish.gif)    | 菱形水母图案     |
+| 倾斜网格 (30° 旋转) | ![倾斜](demos/demo_tilted_jellyfish.gif)     | 倾斜的矩形网格   |
+
 ## 特性
 
 - 🌊 流畅的实时动画效果

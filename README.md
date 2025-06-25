@@ -32,6 +32,16 @@ A dynamic cyber jellyfish animation project based on Python and Pygame.
 | `x: -100~100, y: 5~10`         | ![Small Positive Y](demos/demo_small_positive_y.gif)         | Small positive Y range                |
 | `x: -10~0, y: -46~200`         | ![Negative X](demos/demo_negative_x_asymmetric.gif)          | Negative X range with positive Y bias |
 
+#### Geometric Shape Variations
+
+| Shape Type                 | Preview                                        | Description                       |
+| -------------------------- | ---------------------------------------------- | --------------------------------- |
+| Triangle Grid              | ![Triangle](demos/demo_triangle_jellyfish.gif) | Triangle-shaped jellyfish pattern |
+| Circular Grid              | ![Circle](demos/demo_circle_jellyfish.gif)     | Circular jellyfish pattern        |
+| 5-Pointed Star             | ![Star](demos/demo_star_jellyfish.gif)         | Star-shaped jellyfish             |
+| Diamond (45° Rotation)     | ![Diamond](demos/demo_diamond_jellyfish.gif)   | Diamond-shaped jellyfish          |
+| Tilted Grid (30° Rotation) | ![Tilted](demos/demo_tilted_jellyfish.gif)     | Tilted rectangular grid           |
+
 ## Features
 
 - 🌊 Smooth real-time animation effects
