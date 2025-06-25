@@ -9,15 +9,15 @@ screen = pygame.display.set_mode((screen_size_x, screen_size_y))
 clock = pygame.time.Clock()
 
 # 网格参数 - 支持不对称范围
-grid_size = 150
+grid_size = 140
 limit_x_min = -10000
 limit_x_max = 10000
 limit_y_min = -46
 limit_y_max = 200
-generate_demo = False  # 是否生成演示gif
+generate_demo = True  # 是否生成演示gif
 
 # GIF生成参数
-gif_fps = 15  # GIF帧率 (frames per second) - 建议范围: 10-30
+gif_fps = 30  # GIF帧率 (frames per second) - 建议范围: 10-30
 gif_duration_seconds = 4  # GIF总时长 (秒) - 建议范围: 2-8秒
 # 注意: 高帧率 + 长时长 = 大文件 + 慢生成
 
@@ -76,8 +76,7 @@ if generate_demo:
     # 保存gif
     frames[0].save('demo.gif', save_all=True, append_images=frames[1:], duration=frame_duration_ms, loop=0)
     print(f"✅ demo.gif 生成完成 ({gif_fps} FPS, {gif_duration_seconds}秒)")
-    pygame.quit()
-    exit()
+    print("🎮 继续在pygame窗口中观看动画...")
 
 # 主循环
 running = True
