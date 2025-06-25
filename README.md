@@ -42,6 +42,16 @@ A dynamic cyber jellyfish animation project based on Python and Pygame.
 | Diamond (45° Rotation)     | ![Diamond](demos/demo_diamond_jellyfish.gif)   | Diamond-shaped jellyfish          |
 | Tilted Grid (30° Rotation) | ![Tilted](demos/demo_tilted_jellyfish.gif)     | Tilted rectangular grid           |
 
+#### Advanced Non-Regular Grids
+
+| Pattern Type             | Preview                                     | Description                          |
+| ------------------------ | ------------------------------------------- | ------------------------------------ |
+| Concentric Rings         | ![Rings](demos/demo_concentric_rings.gif)   | Multi-layered ring structures        |
+| Random Clusters          | ![Clusters](demos/demo_random_clusters.gif) | Randomly distributed cluster regions |
+| Koch Snowflake (Fractal) | ![Snowflake](demos/demo_koch_snowflake.gif) | Self-similar fractal pattern         |
+| Spiral Galaxy            | ![Galaxy](demos/demo_spiral_galaxy.gif)     | Multi-arm spiral structure           |
+| Voronoi Regions          | ![Voronoi](demos/demo_voronoi_regions.gif)  | Irregular cellular regions           |
+
 ## Features
 
 - 🌊 Smooth real-time animation effects

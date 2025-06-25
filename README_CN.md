@@ -42,6 +42,16 @@
 | 菱形 (45° 旋转)     | ![菱形](demos/demo_diamond_jellyfish.gif)    | 菱形水母图案     |
 | 倾斜网格 (30° 旋转) | ![倾斜](demos/demo_tilted_jellyfish.gif)     | 倾斜的矩形网格   |
 
+#### 高级非常规网格
+
+| 图案类型        | 预览效果                                 | 描述               |
+| --------------- | ---------------------------------------- | ------------------ |
+| 同心圆环        | ![圆环](demos/demo_concentric_rings.gif) | 多层环形结构       |
+| 随机聚类区域    | ![聚类](demos/demo_random_clusters.gif)  | 随机分布的聚类区域 |
+| 科赫雪花 (分形) | ![雪花](demos/demo_koch_snowflake.gif)   | 自相似分形图案     |
+| 螺旋星系        | ![星系](demos/demo_spiral_galaxy.gif)    | 多臂螺旋结构       |
+| 泰森多边形区域  | ![泰森](demos/demo_voronoi_regions.gif)  | 不规则细胞区域     |
+
 ## 特性
 
 - 🌊 流畅的实时动画效果
