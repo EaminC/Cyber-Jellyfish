@@ -1,0 +1,52 @@
+主demo：
+limit_x_min = -10000
+limit_x_max = 10000
+limit_y_min = -46
+limit_y_max = 200 这个可以生成的帧率高一点
+
+1.
+limit_x_min = -15
+limit_x_max = 15
+limit_y_min = -15
+limit_y_max = 15
+
+2.
+limit_x_min = -1000
+limit_x_max = 1000
+limit_y_min = -15
+limit_y_max = 15
+
+3.
+limit_x_min = -1000
+limit_x_max = 1000
+limit_y_min = -500
+limit_y_max = 500
+
+4.
+limit_x_min = -100000000000
+limit_x_max = 100000000
+limit_y_min = -100
+limit_y_max = 100
+
+
+
+不对称
+
+1.
+limit_x_min = -10
+limit_x_max = 0
+limit_y_min = -46
+limit_y_max = 200
+
+2.
+limit_x_min = -100
+limit_x_max = 100
+limit_y_min = 5
+limit_y_max = 10
+
+3.
+
+limit_x_min = -100000
+limit_x_max = 1000000
+limit_y_min = -2
+limit_y_max = -1
