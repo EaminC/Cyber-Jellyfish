@@ -1,3 +1,15 @@
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-g', '--generate_demo', action='store_true', help='Generate a GIF file')
+parser.add_argument('-o', '--output', type=str, default='demo.gif', help='Output GIF file name')
+args = parser.parse_args()
+
+generate_demo = args.generate_demo  # 是否生成演示gif
+output_file = args.output  # 输出文件名
+if not output_file.endswith('.gif'):
+    output_file += '.gif'  # 确保输出文件名以.gif结尾
+
 import pygame
 import numpy as np
 
@@ -14,7 +26,6 @@ limit_x_min = -10000
 limit_x_max = 10000
 limit_y_min = -46
 limit_y_max = 200
-generate_demo = False  # 是否生成演示gif
 
 # GIF生成参数
 gif_fps = 15  # GIF帧率 (frames per second) - 建议范围: 10-30
@@ -44,38 +55,38 @@ def compute_transformed(x, y, t):
 if generate_demo:
     from PIL import Image
     print("🎬 开始生成演示gif...")
-    
+
     # 计算帧数和时间参数
     max_frames = int(gif_fps * gif_duration_seconds)
     frame_duration_ms = int(1000 / gif_fps)  # 每帧持续时间(毫秒)
     time_step = gif_duration_seconds / max_frames  # 时间步长
-    
+
     print(f"📊 GIF参数: {gif_fps} FPS, {gif_duration_seconds}秒, 总帧数: {max_frames}")
-    
+
     frames = []
-    
+
     for frame in range(max_frames):
         t = frame * time_step
         X, Y = compute_transformed(X0_flat, Y0_flat, t)
-        
+
         screen.fill((0, 0, 0))
         for x, y in zip(X, Y):
             if 0 <= x < screen_size_x and 0 <= y < screen_size_y:
                 screen.set_at((int(x), int(y)), (255, 255, 255))
-        
+
         # 保存帧
         pygame_image = pygame.surfarray.array3d(screen)
         pygame_image = pygame_image.swapaxes(0, 1)
         pil_image = Image.fromarray(pygame_image)
         frames.append(pil_image)
-        
+
         pygame.display.flip()
         if frame % max(1, max_frames // 5) == 0:  # 显示5次进度
             print(f"  进度: {frame+1}/{max_frames}")
-    
+
     # 保存gif
-    frames[0].save('demo.gif', save_all=True, append_images=frames[1:], duration=frame_duration_ms, loop=0)
-    print(f"✅ demo.gif 生成完成 ({gif_fps} FPS, {gif_duration_seconds}秒)")
+    frames[0].save(output_file, save_all=True, append_images=frames[1:], duration=frame_duration_ms, loop=0)
+    print(f"✅ {output_file} 生成完成 ({gif_fps} FPS, {gif_duration_seconds}秒)")
     pygame.quit()
     exit()
 
@@ -89,12 +100,12 @@ while running:
 
     t = frame / 30.0
     X, Y = compute_transformed(X0_flat, Y0_flat, t)
-    
+
     screen.fill((0, 0, 0))  # 黑底
     for x, y in zip(X, Y):
         if 0 <= x < screen_size_x and 0 <= y < screen_size_y:
             screen.set_at((int(x), int(y)), (255, 255, 255))  # 白点
-    
+
     pygame.display.flip()
     clock.tick(120)  # 120 FPS
     frame += 1
