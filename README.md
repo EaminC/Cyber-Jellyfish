@@ -20,17 +20,17 @@ A dynamic cyber jellyfish animation project based on Python and Pygame.
 | ----------------------------------------- | -------------------------------------------------- | -------------------------------------- |
 | `x: -15~15, y: -15~15`                    | ![Small Range](demos/demo_small_symmetric.gif)     | Compact, concentrated pattern          |
 | `x: -1000~1000, y: -15~15`                | ![Wide Range](demos/demo_wide_symmetric.gif)       | Horizontally stretched, narrow pattern |
-| `x: -1000~1000, y: -500~500`              | ![Large Range](demos/demo_large_symmetric.gif)     | Moderate range, balanced patterns      |
 | `x: -100000000000~100000000, y: -100~100` | ![Extreme Range](demos/demo_extreme_symmetric.gif) | Extreme asymmetric X with symmetric Y  |
+| `x: -1000~1000, y: -500~500`              | ![Large Range](demos/demo_large_symmetric.gif)     | Moderate range, balanced patterns      |
 
 #### Asymmetric Configurations
 
 | Configuration                  | Preview                                                      | Description                           |
 | ------------------------------ | ------------------------------------------------------------ | ------------------------------------- |
 | `x: 1~2, y: -5~10`             | ![Tiny Positive](demos/demo_tiny_positive.gif)               | Tiny positive X with mixed Y range    |
-| `x: -10~0, y: -46~200`         | ![Negative X](demos/demo_negative_x_asymmetric.gif)          | Negative X range with positive Y bias |
-| `x: -100~100, y: 5~10`         | ![Small Positive Y](demos/demo_small_positive_y.gif)         | Small positive Y range                |
 | `x: -100000~1000000, y: -2~-1` | ![Extreme X Negative Y](demos/demo_extreme_x_negative_y.gif) | Extreme X range with small negative Y |
+| `x: -100~100, y: 5~10`         | ![Small Positive Y](demos/demo_small_positive_y.gif)         | Small positive Y range                |
+| `x: -10~0, y: -46~200`         | ![Negative X](demos/demo_negative_x_asymmetric.gif)          | Negative X range with positive Y bias |
 
 ## Features
 

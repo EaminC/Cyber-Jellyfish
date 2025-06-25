@@ -20,17 +20,17 @@
 | ----------------------------------------- | --------------------------------------------- | ------------------------ |
 | `x: -15~15, y: -15~15`                    | ![小范围](demos/demo_small_symmetric.gif)     | 紧凑集中的图案           |
 | `x: -1000~1000, y: -15~15`                | ![宽范围](demos/demo_wide_symmetric.gif)      | 水平拉伸的窄图案         |
-| `x: -1000~1000, y: -500~500`              | ![大范围](demos/demo_large_symmetric.gif)     | 中等范围，平衡图案       |
 | `x: -100000000000~100000000, y: -100~100` | ![极大范围](demos/demo_extreme_symmetric.gif) | X 轴极度不对称，Y 轴对称 |
+| `x: -1000~1000, y: -500~500`              | ![大范围](demos/demo_large_symmetric.gif)     | 中等范围，平衡图案       |
 
 #### 不对称配置
 
 | 配置参数                       | 预览效果                                         | 描述                       |
 | ------------------------------ | ------------------------------------------------ | -------------------------- |
 | `x: 1~2, y: -5~10`             | ![微小正值](demos/demo_tiny_positive.gif)        | 微小正 X 范围，混合 Y 范围 |
-| `x: -10~0, y: -46~200`         | ![负X范围](demos/demo_negative_x_asymmetric.gif) | 负 X 范围，正 Y 偏移       |
-| `x: -100~100, y: 5~10`         | ![小正Y](demos/demo_small_positive_y.gif)        | 小的正 Y 范围              |
 | `x: -100000~1000000, y: -2~-1` | ![极大X负Y](demos/demo_extreme_x_negative_y.gif) | 极大 X 范围，小负 Y 范围   |
+| `x: -100~100, y: 5~10`         | ![小正Y](demos/demo_small_positive_y.gif)        | 小的正 Y 范围              |
+| `x: -10~0, y: -46~200`         | ![负X范围](demos/demo_negative_x_asymmetric.gif) | 负 X 范围，正 Y 偏移       |
 
 ## 特性
 
