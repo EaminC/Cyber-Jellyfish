@@ -27,7 +27,7 @@ A dynamic cyber jellyfish animation project based on Python and Pygame.
 
 | Configuration                  | Preview                                                      | Description                           |
 | ------------------------------ | ------------------------------------------------------------ | ------------------------------------- |
-| `x: 1~2, y: 1~2`               | ![Tiny Positive](demos/demo_tiny_positive.gif)               | Tiny positive range                   |
+| `x: 1~2, y: -5~10`             | ![Tiny Positive](demos/demo_tiny_positive.gif)               | Tiny positive X with mixed Y range    |
 | `x: -10~0, y: -46~200`         | ![Negative X](demos/demo_negative_x_asymmetric.gif)          | Negative X range with positive Y bias |
 | `x: -100~100, y: 5~10`         | ![Small Positive Y](demos/demo_small_positive_y.gif)         | Small positive Y range                |
 | `x: -100000~1000000, y: -2~-1` | ![Extreme X Negative Y](demos/demo_extreme_x_negative_y.gif) | Extreme X range with small negative Y |
