@@ -14,21 +14,20 @@
 
 #### 对称配置
 
-| 配置参数                   | 预览效果                            | 描述               |
-| -------------------------- | ----------------------------------- | ------------------ |
-| `x: -15~15, y: -15~15`     | ![小范围](demos/demo_small.gif)     | 紧凑集中的图案     |
-| `x: 极大范围, y: -15~15`   | ![宽范围](demos/demo_wide.gif)      | 水平拉伸的窄图案   |
-| `x: 极大范围, y: -100~100` | ![当前配置](demos/demo_current.gif) | 当前默认配置       |
-| `x: -500~500, y: -500~500` | ![大范围](demos/demo_large.gif)     | 中等范围，平衡图案 |
+| 配置参数                                  | 预览效果                                      | 描述                     |
+| ----------------------------------------- | --------------------------------------------- | ------------------------ |
+| `x: -15~15, y: -15~15`                    | ![小范围](demos/demo_small_symmetric.gif)     | 紧凑集中的图案           |
+| `x: -1000~1000, y: -15~15`                | ![宽范围](demos/demo_wide_symmetric.gif)      | 水平拉伸的窄图案         |
+| `x: -1000~1000, y: -500~500`              | ![大范围](demos/demo_large_symmetric.gif)     | 中等范围，平衡图案       |
+| `x: -100000000000~100000000, y: -100~100` | ![极大范围](demos/demo_extreme_symmetric.gif) | X 轴极度不对称，Y 轴对称 |
 
 #### 不对称配置
 
-| 配置参数                     | 预览效果                                | 描述                |
-| ---------------------------- | --------------------------------------- | ------------------- |
-| `x: -200~800, y: -50~150`    | ![不对称](demos/demo_asymmetric_xy.gif) | X 和 Y 轴不对称范围 |
-| `x: 0~1000, y: -100~100`     | ![X正偏移](demos/demo_positive_x.gif)   | X 轴正向偏移        |
-| `x: 极大范围, y: 0~200`      | ![Y正偏移](demos/demo_positive_y.gif)   | Y 轴正向偏移        |
-| `x: -100~100, y: -1000~1000` | ![高瘦形状](demos/demo_tall.gif)        | 高瘦窄条形状        |
+| 配置参数                       | 预览效果                                         | 描述                     |
+| ------------------------------ | ------------------------------------------------ | ------------------------ |
+| `x: -10~0, y: -46~200`         | ![负X范围](demos/demo_negative_x_asymmetric.gif) | 负 X 范围，正 Y 偏移     |
+| `x: -100~100, y: 5~10`         | ![小正Y](demos/demo_small_positive_y.gif)        | 小的正 Y 范围            |
+| `x: -100000~1000000, y: -2~-1` | ![极大X负Y](demos/demo_extreme_x_negative_y.gif) | 极大 X 范围，小负 Y 范围 |
 
 ## 特性
 
@@ -80,9 +79,9 @@ $$q = 60 - \sin(a \cdot e) + k \cdot \left(3 + \frac{4}{d} \cdot \sin(d^2 - 2t)\
 
 $$c = \frac{d}{2} + \frac{e}{99} - \frac{t}{18}$$
 
-$$X = q \cdot \sin(c) \cdot \text{scale} + \text{center}_x$$
+$$X = (q + 2d) \cdot \sin(c) \cdot \text{scale} + \text{center}_x$$
 
-$$Y = (q + 9d) \cdot \cos(c) \cdot \text{scale} + \text{center}_y$$
+$$Y = (q + 2d) \cdot \cos(c) \cdot \text{scale} + \text{center}_y$$
 
 其中：
 

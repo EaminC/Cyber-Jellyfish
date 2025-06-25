@@ -14,21 +14,20 @@ A dynamic cyber jellyfish animation project based on Python and Pygame.
 
 #### Symmetric Configurations
 
-| Configuration              | Preview                              | Description                            |
-| -------------------------- | ------------------------------------ | -------------------------------------- |
-| `x: -15~15, y: -15~15`     | ![Small Range](demos/demo_small.gif) | Compact, concentrated pattern          |
-| `x: extreme, y: -15~15`    | ![Wide Range](demos/demo_wide.gif)   | Horizontally stretched, narrow pattern |
-| `x: extreme, y: -100~100`  | ![Current](demos/demo_current.gif)   | Current default configuration          |
-| `x: -500~500, y: -500~500` | ![Large Range](demos/demo_large.gif) | Moderate range, balanced patterns      |
+| Configuration                             | Preview                                            | Description                            |
+| ----------------------------------------- | -------------------------------------------------- | -------------------------------------- |
+| `x: -15~15, y: -15~15`                    | ![Small Range](demos/demo_small_symmetric.gif)     | Compact, concentrated pattern          |
+| `x: -1000~1000, y: -15~15`                | ![Wide Range](demos/demo_wide_symmetric.gif)       | Horizontally stretched, narrow pattern |
+| `x: -1000~1000, y: -500~500`              | ![Large Range](demos/demo_large_symmetric.gif)     | Moderate range, balanced patterns      |
+| `x: -100000000000~100000000, y: -100~100` | ![Extreme Range](demos/demo_extreme_symmetric.gif) | Extreme asymmetric X with symmetric Y  |
 
 #### Asymmetric Configurations
 
-| Configuration                | Preview                                     | Description               |
-| ---------------------------- | ------------------------------------------- | ------------------------- |
-| `x: -200~800, y: -50~150`    | ![Asymmetric](demos/demo_asymmetric_xy.gif) | Asymmetric X and Y ranges |
-| `x: 0~1000, y: -100~100`     | ![Positive X](demos/demo_positive_x.gif)    | X-axis positive offset    |
-| `x: extreme, y: 0~200`       | ![Positive Y](demos/demo_positive_y.gif)    | Y-axis positive offset    |
-| `x: -100~100, y: -1000~1000` | ![Tall Shape](demos/demo_tall.gif)          | Tall, narrow shape        |
+| Configuration                  | Preview                                                      | Description                           |
+| ------------------------------ | ------------------------------------------------------------ | ------------------------------------- |
+| `x: -10~0, y: -46~200`         | ![Negative X](demos/demo_negative_x_asymmetric.gif)          | Negative X range with positive Y bias |
+| `x: -100~100, y: 5~10`         | ![Small Positive Y](demos/demo_small_positive_y.gif)         | Small positive Y range                |
+| `x: -100000~1000000, y: -2~-1` | ![Extreme X Negative Y](demos/demo_extreme_x_negative_y.gif) | Extreme X range with small negative Y |
 
 ## Features
 
@@ -80,9 +79,9 @@ $$q = 60 - \sin(a \cdot e) + k \cdot \left(3 + \frac{4}{d} \cdot \sin(d^2 - 2t)\
 
 $$c = \frac{d}{2} + \frac{e}{99} - \frac{t}{18}$$
 
-$$X = q \cdot \sin(c) \cdot \text{scale} + \text{center}_x$$
+$$X = (q + 2d) \cdot \sin(c) \cdot \text{scale} + \text{center}_x$$
 
-$$Y = (q + 9d) \cdot \cos(c) \cdot \text{scale} + \text{center}_y$$
+$$Y = (q + 2d) \cdot \cos(c) \cdot \text{scale} + \text{center}_y$$
 
 Where:
 
