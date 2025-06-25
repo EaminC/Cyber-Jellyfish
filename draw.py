@@ -31,8 +31,8 @@ def compute_transformed(x, y, t):
     c = d / 2 + e / 99 - t / 18
     # 调整缩放和偏移，让水母居中并放大
     scale = 1.8  # 放大倍数
-    X = q * np.sin(c) * scale + screen_size_x // 2  # 居中
-    Y = (q + 9 * d) * np.cos(c) * scale + screen_size_y // 2  # 居中
+    X = (q + 2 * d) * np.sin(c) * scale + screen_size_x // 2  # 居中
+    Y = (q + 2 * d) * np.cos(c) * scale + screen_size_y // 2  # 居中
     return X, Y
 
 # Demo生成功能
